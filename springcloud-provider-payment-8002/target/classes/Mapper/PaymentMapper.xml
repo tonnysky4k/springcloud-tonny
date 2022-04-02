@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cloud.Mapper.PaymentMapper">
+
+    <resultMap id="PaymentResultMap" type="com.commons.entity.Payment">
+        <id column="id" property="id"></id>
+        <id column="flowNumber" property="flowNumber"></id>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.commons.entity.Payment">
+        insert into t_payment (flowNumber) values (#{flowNumber});
+    </insert>
+
+    <select id="selectById" resultMap="PaymentResultMap">
+        select id,flowNumber from t_payment where id = #{id};
+    </select>
+
+</mapper>

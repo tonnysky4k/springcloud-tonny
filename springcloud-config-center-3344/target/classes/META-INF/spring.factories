@@ -1,0 +1,2 @@
+# 修改系统内置的编码
+org.springframework.boot.env.PropertySourceLoader=com.config.CustomPropertySourceLoader
